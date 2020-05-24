@@ -65,11 +65,11 @@ HAVING COUNT(*) > 0
 -- 13
 -- LEFT JOINでないと 0-0 のゲームが消えてしまう
 SELECT
-    game.mdate, 
-    game.team1, 
+    game.mdate,
+    game.team1,
     SUM(CASE WHEN goal.teamid = team1 THEN 1
                ELSE 0
-          END) AS score1, 
+          END) AS score1,
     game.team2,
     SUM(CASE WHEN goal.teamid = team2 THEN 1
                ELSE 0
